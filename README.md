@@ -1,4 +1,4 @@
 btvbot
 ======
 
-Twitter bot for BreedTv
+Twitter bot for BreedTV
