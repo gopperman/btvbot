@@ -16,7 +16,7 @@ function tweet() {
     console.log(video);
 
     myTweet = htmlencode.htmlDecode(video.title) + ': http://breedtv.com/'+ video.slug;
-    console.log(myTweet); // Print the google web page.
+    console.log(myTweet); 
 
   }
 
