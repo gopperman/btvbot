@@ -1,0 +1,25 @@
+
+{
+  "name": "breedtv",
+  "version": "0.0.1",
+  "description": "Tweet random videos from BreedTV",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Drew + Greg",
+  "repository": {
+    "type" : "git",
+    "url": "https://github.com/gopperman/btvbot.git"
+  },
+  "license": "MIT",
+   "engines": {
+    "node": "0.10.12",
+    "npm": "1.2.30"
+  },
+  "dependencies": {
+    "twit": "~1.1.9",
+    "request": "~2.40.0",
+    "htmlencode":"~0.0.4"
+  }
+}
