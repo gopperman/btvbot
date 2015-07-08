@@ -15,13 +15,24 @@ function tweet() {
     video = body[0];
     console.log(video);
 
-    myTweet = htmlencode.htmlDecode(video.title) + ': http://breedtv.com/'+ video.slug;
-    console.log(myTweet); 
+    // myTweet = htmlencode.htmlDecode(video.title) + ': http://breedtv.com/'+ video.slug;
+    var videoLink = '';
+
+    myTweet = htmlencode.htmlDecode(video.title) + ': '; //First add the title of the video
+
+    //make different links, depending on whether it's youtube or vimeo
+    if (video.src == 'youtube') {
+      myTweet += 'https://www.youtube.com/watch?v='+ video.id;
+    } else if (video.src == 'vimeo') {
+      myTweet += 'https://vimeo.com/'+ video.id;
+    }
+
+    console.log(myTweet);
 
   }
 
 
-//  tweet it
+ // tweet it
   T.post('statuses/update', { status: myTweet }, function(err, reply) {
           if (err) {
             console.log('error:', err);
