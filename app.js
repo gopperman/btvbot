@@ -3,6 +3,14 @@ var request = require('request');
 var htmlencode = require('htmlencode');
 var T = new Twit(require('./config.js'))
 
+String.prototype.killWhiteSpace = function() {
+    return this.replace(/\s/g, '');
+};
+
+String.prototype.killQuotes = function() {
+    return this.replace(/\\"/g, '').replace(/\\'/g, '');
+};
+
 
 function tweet() {
   //build a tweet
@@ -27,20 +35,35 @@ function tweet() {
       myTweet += 'https://vimeo.com/'+ video.id;
     }
 
+
+    var i = video.tags.length;
+
+    while (i--) {
+      var hashtag = '#' + video.tags[i].name.killWhiteSpace().killQuotes();
+
+      console.log(hashtag);
+
+
+      if ((myTweet.length + hashtag.length) < 140) { //less than because we need one more character for a space before the #hashtag
+        myTweet += ' ' + hashtag;
+      };
+    };
+
+
     console.log(myTweet);
 
   }
 
 
  // tweet it
-  T.post('statuses/update', { status: myTweet }, function(err, reply) {
-          if (err) {
-            console.log('error:', err);
-          }
-          else {
-            // console.log('reply:', reply);
-          }
-  });
+  // T.post('statuses/update', { status: myTweet }, function(err, reply) {
+  //         if (err) {
+  //           console.log('error:', err);
+  //         }
+  //         else {
+  //           // console.log('reply:', reply);
+  //         }
+  // });
 
 })
 
