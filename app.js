@@ -56,14 +56,14 @@ function tweet() {
 
 
  // tweet it
-  // T.post('statuses/update', { status: myTweet }, function(err, reply) {
-  //         if (err) {
-  //           console.log('error:', err);
-  //         }
-  //         else {
-  //           // console.log('reply:', reply);
-  //         }
-  // });
+  T.post('statuses/update', { status: myTweet }, function(err, reply) {
+          if (err) {
+            console.log('error:', err);
+          }
+          else {
+            // console.log('reply:', reply);
+          }
+  });
 
 })
 
