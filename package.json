@@ -1,4 +1,3 @@
-
 {
   "name": "breedtv",
   "version": "0.0.1",
@@ -9,17 +8,18 @@
   },
   "author": "Drew + Greg",
   "repository": {
-    "type" : "git",
+    "type": "git",
     "url": "https://github.com/gopperman/btvbot.git"
   },
   "license": "MIT",
-   "engines": {
+  "engines": {
     "node": "0.10.12",
     "npm": "1.2.30"
   },
   "dependencies": {
     "twit": "~1.1.9",
     "request": "~2.40.0",
-    "htmlencode":"~0.0.4"
+    "htmlencode": "~0.0.4",
+    "fb": "^0.7.0"
   }
 }
